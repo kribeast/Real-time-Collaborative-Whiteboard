@@ -1,0 +1,75 @@
+{% extends '../base.html' %} {% load static %} {% block content %}
+
+<h1 id="heading">Registration</h1>
+<p class="text-center mt-4" style="margin-right: 140px;">Have an account? <a href="{% url 'login' %}">Log In</a></p>
+<form method="POST">
+  {% csrf_token %} {% include 'alert.html' %}
+  <!-- 2 column grid layout with text inputs for the first and last names -->
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <input
+          type="text"
+          name="first_name"
+          id="form3Example1"
+          class="form-control"
+          required
+        />
+        <label class="form-label" for="form3Example1">First name</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input
+          type="text"
+          name="last_name"
+          id="form3Example2"
+          class="form-control"
+          required
+        />
+        <label class="form-label" for="form3Example2">Last name</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- username input -->
+  <div class="form-outline mb-4">
+    <input
+      type="text"
+      name="username"
+      id="form3Example3"
+      class="form-control"
+      required
+    />
+    <label class="form-label" for="form3Example3">Username</label>
+  </div>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input
+      type="text"
+      name="email"
+      id="form3Example4"
+      class="form-control"
+      required
+    />
+    <label class="form-label" for="form3Example4">Email</label>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input
+      type="password"
+      name="password"
+      id="form3Example5"
+      class="form-control"
+      required
+    />
+    <label class="form-label" for="form3Example5">Password</label>
+  </div>
+
+  <!-- Submit button -->
+  <input type="submit" class="btn btn-primary mb-4" />
+</form>
+
+{% endblock %}
